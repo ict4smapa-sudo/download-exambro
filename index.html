@@ -3,52 +3,224 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Download Smapajr Exambro</title>
+  <title>Download Smapajr Exambro — SMAN 4 Jember</title>
   <style>
-    * { box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
+    :root {
+      --primary: #1d4ed8;
+      --primary-hover: #1e40af;
+      --bg-gradient: linear-gradient(135deg, #eff6ff 0%, #e2e8f0 100%);
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+    }
+    * { box-sizing: border-box; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
     body {
-      margin: 0; padding: 20px; background: #f4f6f9; color: #1e293b;
-      display: flex; justify-content: center; align-items: center; min-height: 100vh;
+      margin: 0;
+      padding: 20px 16px;
+      background: var(--bg-gradient);
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
     }
     .card {
-      background: #ffffff; max-width: 420px; width: 100%; padding: 32px 24px;
-      border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); text-align: center;
+      background: var(--card-bg);
+      max-width: 480px;
+      width: 100%;
+      padding: 32px 24px 24px;
+      border-radius: 20px;
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.8);
     }
-    h1 { font-size: 22px; margin: 0 0 8px; color: #0f172a; }
-    p.sub { font-size: 14px; color: #64748b; margin: 0 0 24px; }
-    .btn-download {
-      display: block; width: 100%; padding: 16px; background: #2563eb; color: #ffffff;
-      text-decoration: none; font-weight: 700; font-size: 16px; border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3); transition: background 0.2s;
+    .header-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 18px;
     }
-    .btn-download:active { background: #1d4ed8; }
-    .info { font-size: 12px; color: #64748b; margin-top: 10px; }
+    .header-logos img {
+      height: 62px;
+      width: auto;
+      max-width: 120px;
+      object-fit: contain;
+    }
+    .divider-logo {
+      width: 1px;
+      height: 40px;
+      background: #cbd5e1;
+    }
+    .badge {
+      display: inline-block;
+      background: #dbeafe;
+      color: #1e40af;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.3px;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: 800;
+      margin: 0 0 6px;
+      color: var(--text-main);
+      letter-spacing: -0.3px;
+    }
+    p.sub {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin: 0 0 24px;
+    }
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .btn-primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 16px;
+      background: var(--primary);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15.5px;
+      border-radius: 14px;
+      box-shadow: 0 6px 16px rgba(29, 78, 216, 0.28);
+      transition: transform 0.15s, background 0.2s;
+    }
+    .btn-primary:active {
+      background: var(--primary-hover);
+      transform: scale(0.98);
+    }
+    .btn-secondary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 13px;
+      background: #f8fafc;
+      color: #334155;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      border-radius: 14px;
+      border: 1.5px solid #cbd5e1;
+      transition: background 0.2s;
+    }
+    .btn-secondary:active {
+      background: #e2e8f0;
+    }
+    .alert-wa {
+      background: #fffbeb;
+      color: #92400e;
+      font-size: 12.5px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      margin-top: 18px;
+      text-align: left;
+      line-height: 1.5;
+      border: 1px solid #fde68a;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
     .steps {
-      text-align: left; background: #f8fafc; padding: 16px; border-radius: 10px;
-      margin-top: 24px; font-size: 13px; line-height: 1.6; border: 1px solid #e2e8f0;
+      text-align: left;
+      background: #f8fafc;
+      padding: 18px;
+      border-radius: 14px;
+      margin-top: 18px;
+      font-size: 13px;
+      line-height: 1.65;
+      border: 1px solid #e2e8f0;
     }
-    .steps strong { display: block; margin-bottom: 6px; color: #0f172a; }
-    .steps ol { margin: 0; padding-left: 18px; }
+    .steps-title {
+      display: block;
+      font-size: 14.5px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text-main);
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 8px;
+    }
+    .steps ol {
+      margin: 0;
+      padding-left: 18px;
+      color: #334155;
+    }
+    .steps li {
+      margin-bottom: 7px;
+    }
+    .steps li:last-child {
+      margin-bottom: 0;
+    }
+    .footer {
+      margin-top: 22px;
+      padding-top: 14px;
+      border-top: 1px solid #f1f5f9;
+      font-size: 12px;
+      color: #64748b;
+    }
   </style>
 </head>
 <body>
   <div class="card">
-    <h1>Smapajr Exambro</h1>
-    <p class="sub">Versi 1.1.2 • Android (Ukuran 52 MB)</p>
+    <!-- LOGO SEKOLAH & LOGO ICT -->
+    <div class="header-logos">
+      <img src="LOGO%20SMA4%20Pemerintah%20(1).png" alt="Logo SMAN 4 Jember">
+      <div class="divider-logo"></div>
+      <img src="Untitled%20Design.png" alt="Logo ICT SMAPA">
+    </div>
 
-    <a class="btn-download" href="https://github.com/ict4smapa-sudo/downloaad-exambro/releases/latest/download/Smapajr.Exambro.v1.1.2.apk">
-      DOWNLOAD APLIKASI
-    </a>
-    <div class="info">Klik tombol di atas untuk mulai mengunduh</div>
+    <div class="badge">PORTAL RESMI UJIAN • SMAN 4 JEMBER</div>
+    <h1>Smapajr Exambro</h1>
+    <p class="sub">Versi 1.1.2 • Khusus Perangkat Android (52 MB)</p>
+
+    <div class="btn-group">
+      <!-- TOMBOL UTAMA (SERVER CEPAT GITHUB CDN) -->
+      <a class="btn-primary" href="https://github.com/ict4smapa-sudo/downloaad-exambro/releases/latest/download/Smapajr.Exambro.v1.1.2.apk">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V3"/>
+        </svg>
+        DOWNLOAD UTAMA (SERVER CEPAT)
+      </a>
+
+      <!-- TOMBOL CADANGAN (GOOGLE DRIVE) -->
+      <a class="btn-secondary" href="https://drive.google.com/drive/folders/1JJT45srYjeBG77t8d3Vouh6w5JUY-JaW?usp=drive_link" target="_blank" rel="noopener">
+        Link Alternatif (Google Drive)
+      </a>
+    </div>
+
+    <div class="alert-wa">
+      <span style="font-size: 16px;">⚠️</span>
+      <div>
+        <b>Buka dari WhatsApp?</b> Jika tombol download tidak merespons, ketuk ikon <b>titik tiga (⋮)</b> di pojok kanan atas lalu pilih <b>Buka di Chrome</b>.
+      </div>
+    </div>
 
     <div class="steps">
-      <strong>Panduan Instalasi Singkat:</strong>
+      <span class="steps-title">Panduan Download & Instalasi:</span>
       <ol>
-        <li>Jika muncul peringatan <em>"File mungkin berbahaya"</em>, pilih <b>Tetap download</b>.</li>
-        <li>Setelah selesai, buka file <b>Smapajr.Exambro.v1.1.2.apk</b>.</li>
-        <li>Jika diminta izin instalasi dari browser, pilih <b>Setelan</b> lalu aktifkan <b>Izinkan dari sumber ini</b>.</li>
-        <li>Klik <b>Install</b> dan tunggu hingga selesai.</li>
+        <li>Ketuk tombol <b>Download Utama</b> di atas (gunakan <i>Link Alternatif</i> hanya jika server utama terkendala).</li>
+        <li>Jika muncul peringatan <i>"File mungkin berbahaya"</i>, pilih <b>Tetap download</b> dan tunggu hingga unduhan 52 MB selesai.</li>
+        <li>Ketuk file <b>Smapajr.Exambro.v1.1.2.apk</b> pada notifikasi HP atau melalui aplikasi <b>File Saya / Downloads</b>.</li>
+        <li>Jika diminta izin keamanan, pilih <b>Setelan</b> → aktifkan <b>Izinkan dari sumber ini</b>, lalu tekan tombol kembali.</li>
+        <li>Ketuk <b>Install</b> dan tunggu hingga aplikasi terpasang.</li>
+        <li>Jika muncul peringatan <b>Google Play Protect</b>, ketuk <b>Detail selengkapnya</b> lalu pilih <b>Tetap install</b>.</li>
       </ol>
+    </div>
+
+    <div class="footer">
+      Tim ICT • SMA Negeri 4 Jember
     </div>
   </div>
 </body>
