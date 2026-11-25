@@ -38,18 +38,27 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 18px;
+      gap: 20px;
       margin-bottom: 18px;
+      height: 68px;
     }
-    .header-logos img {
-      height: 62px;
+    .logo-sekolah {
+      height: 64px;
       width: auto;
-      max-width: 120px;
       object-fit: contain;
+    }
+    .logo-ict {
+      height: 64px;
+      width: auto;
+      object-fit: contain;
+      /* Memperbesar tampilan visual logo ICT agar mengimbangi ruang kosong di sekitar gambar */
+      transform: scale(1.65);
+      transform-origin: center;
+      margin-left: 8px;
     }
     .divider-logo {
       width: 1px;
-      height: 40px;
+      height: 44px;
       background: #cbd5e1;
     }
     .badge {
@@ -176,9 +185,9 @@
   <div class="card">
     <!-- LOGO SEKOLAH & LOGO ICT -->
     <div class="header-logos">
-      <img src="LOGO%20SMA4%20Pemerintah%20(1).png" alt="Logo SMAN 4 Jember">
+      <img class="logo-sekolah" src="LOGO%20SMA4%20Pemerintah%20(1).png" alt="Logo SMAN 4 Jember">
       <div class="divider-logo"></div>
-      <img src="logo%20ICT4.png" alt="Logo ICT SMAPA">
+      <img class="logo-ict" src="logo%20ICT4.png" alt="Logo ICT SMAPA">
     </div>
 
     <div class="badge">PORTAL RESMI UJIAN • SMAN 4 JEMBER</div>
